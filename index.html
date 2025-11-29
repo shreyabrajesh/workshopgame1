@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Red Light — Mini Game (Squid-inspired)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="game-wrap">
+    <header>
+      <h1>Red Light — Mini Game</h1>
+      <p class="subtitle">Don't move on <strong>RED</strong>! Reach the finish line to win.</p>
+    </header>
+
+    <main class="field">
+      <div class="goal">FINISH</div>
+      <div id="player" class="player" aria-label="player"></div>
+      <div class="track">
+        <div class="tick" style="bottom: 20%;">25%</div>
+        <div class="tick" style="bottom: 40%;">50%</div>
+        <div class="tick" style="bottom: 60%;">75%</div>
+      </div>
+    </main>
+
+    <aside class="hud">
+      <div class="status">
+        <div>Light: <span id="lightIndicator" class="light green">GREEN</span></div>
+        <div>Progress: <span id="progress">0</span>%</div>
+        <div>Attempts left: <span id="lives">3</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="moveBtn" class="btn">Move (Hold)</button>
+        <div class="instructions">
+          <p>Controls: Hold the <kbd>↑</kbd> arrow or the Move button to advance.
+          Stop immediately when it turns RED.</p>
+        </div>
+      </div>
+
+      <div class="log" id="log"></div>
+
+      <div class="footer-actions">
+        <button id="startBtn" class="btn primary">Start Game</button>
+        <button id="resetBtn" class="btn">Reset</button>
+      </div>
+    </aside>
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="overlay-card">
+      <h2 id="overlayTitle">Ready?</h2>
+      <p id="overlayText">Press <strong>Start Game</strong> to begin. When it's 
+        <span class="light green">GREEN</span> you may move. When it's 
+        <span class="light red">RED</span> — freeze!</p>
+      <button id="overlayClose" class="btn primary">Let's play</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
